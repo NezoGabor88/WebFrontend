@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hungarian Card Game</title>
+<style>
+.card {
+    width: 100px;
+    height: 150px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 150px;
+    font-size: 20px;
+}
+</style>
+</head>
+<body>
+<h1>Hungarian Card Game</h1>
+<div id="player-hand"></div>
+<div id="computer-hand"></div>
+<button onclick="dealCards()">Deal Cards</button>
+
+<script>
+function dealCards() {
+    var suits = ['♠', '♣', '♥', '♦'];
+    var values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+    var deck = [];
+    var playerHand = [];
+    var computerHand = [];
+
+    // Create deck
+    for (var i = 0; i < suits.length; i++) {
+        for (var j = 0; j < values.length; j++) {
+            deck.push({suit: suits[i], value: values[j]});
+        }
+    }
+
+    // Shuffle deck
+    deck.sort(() => Math.random() - 0.5);
+
+    // Deal cards
+    for (var k = 0; k < deck.length; k++) {
+        if (k % 2 == 0) {
+            playerHand.push(deck[k]);
+        } else {
+            computerHand.push(deck[k]);
+        }
+    }
+
+    // Display player's hand
+    document.getElementById('player-hand').innerHTML = '<h2>Player Hand</h2>';
+    playerHand.forEach(card => {
+        var cardDiv = document.createElement('div');
+        cardDiv.classList.add('card');
+        cardDiv.textContent = card.value + card.suit;
+        document.getElementById('player-hand').appendChild(cardDiv);
+    });
+
+    // Display computer's hand
+    document.getElementById('computer-hand').innerHTML = '<h2>Computer Hand</h2>';
+    computerHand.forEach(card => {
+        var cardDiv = document.createElement('div');
+        cardDiv.classList.add('card');
+        cardDiv.textContent = '?';
+        document.getElementById('computer-hand').appendChild(cardDiv);
+    });
+}
+</script>
+</body>
+</html>
