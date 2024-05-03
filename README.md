@@ -1,3 +1,3 @@
 # WebFrontend
 Frontend Technologies.
-HTML ,JavaSctipt,JSon,BootStrap.
+HTML ,JavaSctipt,JSon
