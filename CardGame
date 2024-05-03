@@ -19,7 +19,7 @@
 </style>
 </head>
 <body>
-<h1>Hungarian Card Game</h1>
+<h1>Card Game</h1>
 <div id="player-hand"></div>
 <div id="computer-hand"></div>
 <button onclick="dealCards()">Deal Cards</button>
