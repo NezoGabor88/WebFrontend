@@ -32,6 +32,3 @@ document.getElementById("registrationForm").addEventListener("submit", function(
 
 </body>
 </html>
-```
-
-This HTML code creates a simple registration form with fields for name and email. When the form is submitted, it prevents the default form submission behavior, retrieves the values of the name and email fields, logs them to the console, alerts the user with the submitted data, and optionally clears the form fields.
